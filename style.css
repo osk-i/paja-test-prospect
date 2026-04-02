@@ -1,0 +1,631 @@
+/* ============================================
+   Putkisto & Pojat - Retro tyyli
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #1a3a5c;
+  --gold: #d4a843;
+  --cream: #f5f0e1;
+  --brown: #5c3a1e;
+  --rust: #8b4513;
+  --dark-cream: #e8dcc8;
+  --text: #2c2c2c;
+  --border: #b8a88a;
+}
+
+body {
+  font-family: 'Source Serif 4', 'Georgia', serif;
+  background-color: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(0,0,0,0.015) 28px,
+      rgba(0,0,0,0.015) 29px
+    );
+}
+
+/* Vanha paperi -tekstuuri */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139, 69, 19, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(139, 69, 19, 0.02) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- HEADER ---- */
+
+header {
+  background: var(--navy);
+  border-bottom: 5px solid var(--gold);
+  padding: 30px 0 25px;
+  text-align: center;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  margin-top: 5px;
+}
+
+.logo-area {
+  margin-bottom: 10px;
+}
+
+.logo-area h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  font-weight: 900;
+  color: var(--cream);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+}
+
+.logo-area .est {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.9em;
+  color: var(--gold);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+
+.logo-area .tagline {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  color: #a0b8cc;
+  font-size: 1em;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+/* ---- NAVIGOINTI ---- */
+
+nav {
+  background: var(--brown);
+  border-bottom: 2px solid var(--border);
+  border-top: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 12px 28px;
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* ---- HERO ---- */
+
+.hero {
+  background: var(--navy);
+  color: var(--cream);
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 4px double var(--gold);
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: '~';
+  display: block;
+  font-size: 2em;
+  color: var(--gold);
+  letter-spacing: 20px;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 15px 0;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 1.1em;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #c0c8d0;
+  font-style: italic;
+}
+
+/* ---- OSIOT ---- */
+
+section {
+  padding: 50px 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+  text-align: center;
+  color: var(--navy);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.section-divider {
+  width: 120px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 35px;
+  position: relative;
+}
+
+.section-divider::before {
+  content: '\2666';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  padding: 0 10px;
+  color: var(--gold);
+  font-size: 1em;
+}
+
+/* ---- PALVELUT ---- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background: white;
+  border: 2px solid var(--border);
+  padding: 30px 25px;
+  text-align: center;
+  position: relative;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 4px;
+  background: var(--gold);
+}
+
+.service-card .icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-card p {
+  font-size: 0.92em;
+  color: #555;
+}
+
+/* ---- TIETOA MEISTA ---- */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.about-facts {
+  background: white;
+  border: 2px solid var(--border);
+  padding: 30px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+}
+
+.about-facts h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-facts ul {
+  list-style: none;
+}
+
+.about-facts ul li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.95em;
+}
+
+.about-facts ul li:last-child {
+  border-bottom: none;
+}
+
+.about-facts ul li strong {
+  color: var(--navy);
+}
+
+/* ---- REFERENSSIT ---- */
+
+.references-section {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 50px 0;
+}
+
+.references-section .section-title {
+  color: var(--cream);
+}
+
+.references-section .section-divider {
+  background: var(--gold);
+}
+
+.references-section .section-divider::before {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+.references-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.reference-card {
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  padding: 25px;
+  position: relative;
+  background: rgba(255,255,255,0.03);
+}
+
+.reference-card::before {
+  content: '\201D';
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  color: var(--gold);
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.reference-card p {
+  font-style: italic;
+  margin-bottom: 12px;
+  padding-left: 5px;
+  font-size: 0.95em;
+  color: #c0c8d0;
+}
+
+.reference-card .author {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 0.9em;
+}
+
+/* ---- YHTEYDENOTTO ---- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info h3,
+.contact-form-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  font-size: 0.95em;
+}
+
+.contact-info .info-line {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.contact-info .info-line .label {
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 100px;
+}
+
+.hours-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.hours-table caption {
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-size: 1em;
+  caption-side: top;
+  padding-bottom: 8px;
+}
+
+.hours-table td {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.9em;
+}
+
+.hours-table td:first-child {
+  font-weight: 600;
+  width: 50%;
+}
+
+/* ---- LOMAKE ---- */
+
+.contact-form-wrap {
+  background: white;
+  border: 2px solid var(--border);
+  padding: 30px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95em;
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(212, 168, 67, 0.2);
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.btn-submit {
+  background: var(--navy);
+  color: var(--cream);
+  border: 2px solid var(--gold);
+  padding: 12px 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.form-msg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+  display: none;
+}
+
+.form-msg.success {
+  color: #2e7d32;
+  display: block;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+  background: var(--navy);
+  color: #a0b8cc;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 4px solid var(--gold);
+  font-size: 0.85em;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+footer .footer-brand {
+  font-family: 'Playfair Display', serif;
+  color: var(--cream);
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 768px) {
+  .logo-area h1 {
+    font-size: 1.8em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- ANIMAATIOT (hillityt) ---- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Counter-tyylit */
+.counter-row {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.counter-item {
+  text-align: center;
+}
+
+.counter-item .number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  font-weight: 900;
+  color: var(--gold);
+  display: block;
+}
+
+.counter-item .counter-label {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c0c8d0;
+  margin-top: 5px;
+}
